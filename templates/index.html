@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>KL Shortest Route</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <h1>KL Shortest Driving Route (A*)</h1>
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+    <p class="sub">
+      Examples: UPM → KLCC. You can also type aliases (“UPM”, “KLIA”) or raw coordinates (“3.139,101.6869”).
+    </p>
+    <form id="route-form" method="POST" action="/route" accept-charset="utf-8">
+      <label>Point A</label>
+      <input name="pointA" type="text" placeholder="e.g., Universiti Putra Malaysia / UPM / 2.989,101.714" required />
+      <label>Point B</label>
+      <input name="pointB" type="text" placeholder="e.g., KLCC / Pavilion / 3.1579,101.7123" required />
+      <button type="submit">Find Route</button>
+    </form>
+  </main>
+</body>
+</html>

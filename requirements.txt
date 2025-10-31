@@ -1,0 +1,9 @@
+Flask==3.0.3
+Flask-Cors==4.0.1
+geopy==2.4.1
+networkx==3.3
+osmnx==1.9.3
+folium==0.17.0
+shapely==2.0.4
+certifi==2024.8.30
+scikit-learn==1.4.2

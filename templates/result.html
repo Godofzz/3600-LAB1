@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Route Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <h1>Route Result</h1>
+    <p><strong>From:</strong> {{ point_a }}<br/>
+       <strong>To:</strong> {{ point_b }}</p>
+    <p class="distance">Total Distance: <span>{{ distance_km }}</span> km</p>
+
+    <div class="map-wrap">
+      <iframe
+        title="Route map"
+        src="{{ url_for('static', filename=map_rel_path) }}?v={{ range(1, 1000000) | random }}"
+        frameborder="0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <p><a href="{{ url_for('index') }}">← Calculate another route</a></p>
+  </main>
+</body>
+</html>
